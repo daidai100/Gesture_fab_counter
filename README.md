@@ -24,16 +24,6 @@ py -3.10 -m venv .venv
 # 2) 依存ライブラリをインストール
 python -m pip install -U pip
 python -m pip install numpy==1.26.4 opencv-python==4.8.1.78 mediapipe==0.10.14
-
-# 3) モデルを配置
-# 下記URLから gesture_recognizer.task をダウンロードして assets 配下へ
-# https://storage.googleapis.com/mediapipe-assets/gesture_recognizer.task
-mkdir assets
-# （手動でファイルを入れてください）
-
-# 4) オーディオフォルダ（任意）を作成して WAV を複数置く
-mkdir audio
-# 例: audio\like1.wav, audio\like2.wav, ...
 ```
 
 ## 実行方法
