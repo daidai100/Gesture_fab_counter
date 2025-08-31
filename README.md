@@ -1,7 +1,7 @@
 # いいねカウンター（Thumb_Up）— 使い方ガイド
 
-軽量な **MediaPipe Gesture Recognizer** を使って「Thumb_Up（親指グッ）」を検出し、  
-**カウンター表示＋紙吹雪＋ハート＋「+1」エフェクト＋ランダム効果音（WAV）** を出します。  
+軽量な **MediaPipe Gesture Recognizer** を使って「Thumb_Up（親指グッ）」を検出し、
+**カウンター表示＋紙吹雪＋ハート＋「+1」エフェクト＋ランダム効果音（WAV）** を出します。
 CPU負荷を抑えるため 640×480 / 約15FPS で動作します（Windows想定）。
 
 ---
@@ -17,9 +17,6 @@ CPU負荷を抑えるため 640×480 / 約15FPS で動作します（Windows想�
 ## セットアップ手順
 
 ```powershell
-# プロジェクトへ移動
-cd C:\Users\<you>\daidai100\Gesture_fab_counter
-
 # 1) 仮想環境を作成＆有効化
 py -3.10 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -40,6 +37,7 @@ mkdir audio
 ```
 
 ## 実行方法
+
 ```
 # 音あり（audio/ 内の .wav からランダム再生）
 python .\gesture_count.py --model assets\gesture_recognizer.task
@@ -56,12 +54,14 @@ python .\gesture_count.py --model assets\gesture_recognizer.task --camera 1 --wi
 ```
 
 ## 操作方法
+
 ```
 q … 終了
 r … カウンターを 0 にリセット
 ```
 
 ## 機能概要
+
 * 検出対象：Thumb_Up（スコアしきい値 0.6）
 * エフェクト：紙吹雪、赤い ハート、浮き上がる 「+1」
 * 効果音：audio/ の .wav を ランダムに1つ再生（Windows 標準 winsound 使用）
@@ -69,11 +69,12 @@ r … カウンターを 0 にリセット
 * 軽量化：640×480 / 約15FPS（処理タイミング以外のフレームはスキップ）
 
 ## コマンドラインオプション
-| オプション                  |                              既定値 | 説明                          |
-| ---------------------- | -------------------------------: | --------------------------- |
-| `--model`              | `assets/gesture_recognizer.task` | MediaPipe の `.task` モデルへのパス |
-| `--camera`             |                              `0` | カメラインデックス                   |
-| `--width` / `--height` |                    `640` / `480` | キャプチャ解像度                    |
-| `--audio-dir`          |                          `audio` | ランダム再生する WAV を入れるフォルダ       |
-| `--no-sound`           |                                - | 効果音なし                       |
-| `--show-fps`           |                                - | ウィンドウ左上に瞬間FPSを表示            |
+
+| オプション                 |                             既定値 | 説明                                  |
+| -------------------------- | ---------------------------------: | ------------------------------------- |
+| `--model`                | `assets/gesture_recognizer.task` | MediaPipe の `.task` モデルへのパス |
+| `--camera`               |                              `0` | カメラインデックス                    |
+| `--width` / `--height` |                  `640` / `480` | キャプチャ解像度                      |
+| `--audio-dir`            |                          `audio` | ランダム再生する WAV を入れるフォルダ |
+| `--no-sound`             |                                  - | 効果音なし                            |
+| `--show-fps`             |                                  - | ウィンドウ左上に瞬間FPSを表示         |
