@@ -1,4 +1,4 @@
-# いいねカウンター（Thumb_Up）— 使い方ガイド
+# Gesture_fab_counter
 
 軽量な **MediaPipe Gesture Recognizer** を使って「Thumb_Up（親指グッ）」を検出し、
 **カウンター表示＋紙吹雪＋ハート＋「+1」エフェクト＋ランダム効果音（WAV）** を出します。
@@ -30,16 +30,16 @@ python -m pip install numpy==1.26.4 opencv-python==4.8.1.78 mediapipe==0.10.14
 
 ```
 # 音あり（audio/ 内の .wav からランダム再生）
-python .\gesture_count.py --model assets\gesture_recognizer.task
+python .\gesture_count.py --model ./assets\gesture_recognizer.task
 
 # 音なし
-python .\gesture_count.py --model assets\gesture_recognizer.task --no-sound
+python .\gesture_count.py --model ./assets\gesture_recognizer.task --no-sound
 
 # FPS 表示を出す
-python .\gesture_count.py --model assets\gesture_recognizer.task --show-fps
+python .\gesture_count.py --model ./assets\gesture_recognizer.task --show-fps
 
 # カメラ/解像度の指定例
-python .\gesture_count.py --model assets\gesture_recognizer.task --camera 1 --width 1280 --height 720
+python .\gesture_count.py --model ./assets\gesture_recognizer.task --camera 1 --width 1280 --height 720
 
 ```
 
